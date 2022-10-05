@@ -9,10 +9,6 @@ shinyServer(
             top_n_words <- top_3_words(input$text, model, input$num)
         })
         
-        #output$selected_num <- renderUI({
-        #    paste("you have selected", input$num)
-        #})
-
-        output$predicted_words <- renderUI(predicted_words())
+        output$predicted_words <- renderUI(HTML(predicted_words()))
     }
 )
