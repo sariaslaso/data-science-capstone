@@ -47,9 +47,11 @@ DiagrammeR::grViz("digraph {
 
 ## Test the app
 
-The shiny app can be found at <https://sariaslaso.shinyapps.io/shiny_app/>.
+### shiny app can be found at 
+<https://sariaslaso.shinyapps.io/shiny_app/>
 
-
+### source code
+<https://github.com/sariaslaso/data-science-capstone>
 
 
 
