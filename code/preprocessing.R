@@ -30,7 +30,7 @@ sample_files <- function() {
     for (f in c("en_US.blogs.txt", "en_US.news.txt", "en_US.twitter.txt")) {
         input_file <- paste("dataset/en_US/", f, sep = "")
         output_file <- paste("dataset/en_US_sample/", f, sep = "")
-        sample_lines(input_file, output_file, 0.085)
+        sample_lines(input_file, output_file, 0.05)
     }    
 }
 
@@ -56,7 +56,6 @@ load_text <- function(dir) {
 
 # split the data into training and test sets
 split_text <- function(textData, trainingRatio) {
-    # UPDATE COMMENT
     # initialize two empty lists, one for the training set and another for test set
     # for each document in textData 
     # -split into training and test set
@@ -130,22 +129,6 @@ load_ngrams <- function(path, minFreq = 1) {
     ngram_hash <- hash(ngram_df$keys, ngram_df$values)
     return(ngram_hash)
 }
-
-# calculate the conditional probability P(X | Y) and store in a hash
-# probability of X given Y
-#conditional <- function(x, y) {
-#    probability <- hash()
-#    
-#    for (x_name in names(x)) {
-#        x_tokens <- strsplit(x_name, " ")[[1]]
-#        x_prefix <- x_tokens[1:(length(x_tokens) - 1)]
-#        x_prefix <- paste(x_prefix, collapse = " ")
-#        p = x[[x_name]] / y[[x_prefix]]
-#        probability[[x_name]] = p
-#    }
-#    
-#    return(probability)
-#}
 
 conditional <- function(x, y) {
     

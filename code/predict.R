@@ -4,7 +4,7 @@ library(DescTools)
 library(stringi)
 
 # load model
-minFrequency = 5
+minFrequency = 20
 model_dir <- "model"
 
 # load the n-grams from a file
@@ -20,6 +20,12 @@ load_model <- function(model_dir, minFrequency) {
 }
 
 model <- load_model(model_dir, minFrequency)
+
+# save the model data to a file in the shiny_app directory
+saveRDS(model$unigrams, file = "shiny_app/unigrams.rds")
+saveRDS(model$bigrams, file = "shiny_app/bigrams.rds")
+saveRDS(model$trigrams, file = "shiny_app/trigrams.rds")
+
 
 
 # determine the k(= 3) most likely words that follow an ngram (n = 1, 2)
@@ -142,6 +148,8 @@ accuracy_at_3 <- function(text_entry, model) {
             }
         }
     }
+    
+    return(predicted_count / N)
 }
 
 accuracy <- function(text_entry, model) {
@@ -177,7 +185,7 @@ accuracy <- function(text_entry, model) {
         
     }
     
-    return(predicted_count_1 / N)
+    return(predicted_count / N)
 }
 
 count_predicted <- function(text_entry, model) {

@@ -11,13 +11,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Prediction Algorithm
 
+### Conditional probability
 The predictive model consists of generating the k most probable words following 
 a text entry. Based on calculating the conditional probability of a word $w$ 
 given some history $h$, $$P(w,h).$$
 
-The performance of the model varies for different choices of the "minFrequency"
-parameter, which sets the minimum count of n-grams that are included in the
-probability calculation.
+### Minimum frequency
+The performance of the algorithm varies for different choices of the 
+"minFrequency" parameter, which sets the minimum count of n-grams that are 
+included in the probability calculation.
 
 
 ## Next word design
