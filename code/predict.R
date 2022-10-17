@@ -188,16 +188,7 @@ accuracy <- function(text_entry, model) {
     return(predicted_count / N)
 }
 
-count_predicted <- function(text_entry, model) {
-    
-    N = length(text_entry)
-    unigrams = model$unigrams
-    in_vocabulary = 0
-    
-    for (indx in 1:N) {
-        if(has.key(text_entry[[indx]], unigrams)) {}
-    }
-}
+
 
 
 
